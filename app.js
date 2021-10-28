@@ -1,15 +1,16 @@
+//Get and Print History
 function getHistory(){
     return document.getElementById('history-value').innerText;
 }
-
-function printHistory( num){
+function printHistory(num){
     document.getElementById('history-value').innerText = num;
 }
 
+
+// Get and Print Output
 function getOutput(){
     return document.getElementById('output-value').innerText;
 }
-
 function printOutput(num){
     if(num == ""){
         document.getElementById('output-value').innerText = num;
@@ -18,17 +19,20 @@ function printOutput(num){
         document.getElementById('output-value').innerText = getFormattedNumber(num);
     }
 }
+
  //this function reads a number and returns a coma separated value.
 function getFormattedNumber(num){
     var n = Number(num); // NUmber() converts object argument's value to a number. If the value can't be converted to a legal number, NaN is returned.
-    var value = n.toLocaleString("en")
+    var value = n.toLocaleString("en") // for coma separated value
     return value;
 }
 
+//to remove coma from numbers using regex
 function reverseNumberFormat(num){
     return Number(num.replace(/,/g,''));
 }
 
+//Operators class
 var operator = document.getElementsByClassName('operator');
 for(var i=0; i<operator.length; i++){
     operator[i].addEventListener('click', function(){
