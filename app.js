@@ -18,9 +18,9 @@ function printOutput(num){
         document.getElementById('output-value').innerText = getFormattedNumber(num);
     }
 }
-
+ //this function reads a number and returns a coma separated value.
 function getFormattedNumber(num){
-    var n = Number(num);
+    var n = Number(num); // NUmber() converts object argument's value to a number. If the value can't be converted to a legal number, NaN is returned.
     var value = n.toLocaleString("en")
     return value;
 }
